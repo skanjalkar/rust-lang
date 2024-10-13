@@ -29,6 +29,13 @@ fn main() {
     let s2 = takes_ownership(s);
 
     println!("{}", s2);
+    let mut s3 = String::from("hello");
+    test_mutable(&mut s3);
+    println!("{}", s3);
+}
+
+fn test_mutable(some_string: &mut String) {
+    some_string.push_str("foo");
 }
 
 fn takes_ownership(some_string: String) -> String {
